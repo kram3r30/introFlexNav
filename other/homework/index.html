@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Display: flex nav</title>
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="css/font-awesome-4.6.3/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/nav-hw.css" />
+    <!-- <style>
+    /* styles - start here but use a linked external style sheet */
+  </style> -->
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo"><i class="fa fa-bullseye fa-2x"></i></a>
+      <nav>
+        <ul>
+          <li><a class="active" href="recipes.html">Recipes</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="delivery.html">Delivery</a></li>
+        </ul>
+      </nav>
+      <button class="btn">
+        <i class="fa fa-sign-out fa-1x"></i>
+        <!-- <a class="sign-out-link">Sign Out</a> -->
+        Sign Out
+      </button>
+    </header>
+
+    <script>
+      var mainNav = document.querySelectorAll('nav a')
+      document.addEventListener('click', showActive)
+
+      function showActive(event) {
+        event.preventDefault()
+        if (event.target.matches('nav a')) {
+          for (let navItem of mainNav) {
+            navItem.classList.remove('active')
+          }
+          event.target.classList.add('active')
+        }
+      }
+    </script>
+  </body>
+</html>
